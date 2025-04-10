@@ -2,14 +2,14 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
   const frontendSkills = [
-    "Html",
-    "Css",
-    "JavaScript",
     "React",
-    "TailwindCSS"
+    "Vue",
+    "TypeScript",
+    "TailwindCSS",
+    "Svelte",
   ];
 
-  const backendSkills = ["Node.js"];
+  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
 
   return (
     <section
@@ -69,11 +69,11 @@ export const About = () => {
               <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
-                  <strong>Master of Computer Applications</strong> - LJ University
-                  (2025-2026)
+                  <strong> B.S. in Computer Science </strong> - XYZ University
+                  (2016-2020)
                 </li>
                 <li>
-                  Relevant Coursework : Programming & Development, Data Structures, Database Management Systems (DBMS, SQL, NoSQL)
+                  Relevant Coursework: Data Structures, Web Development, Cloud
                   Computing...
                 </li>
               </ul>

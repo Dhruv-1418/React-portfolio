@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
 
@@ -9,19 +9,8 @@ export const Contact = () => {
     message: "",
   });
 
-  // Load saved data from localStorage on mount
-  useEffect(() => {
-    const savedFormData = localStorage.getItem("contactFormData");
-    if (savedFormData) {
-      setFormData(JSON.parse(savedFormData));
-    }
-  }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Save form data to local storage
-    localStorage.setItem("contactFormData", JSON.stringify(formData));
 
     emailjs
       .sendForm(
@@ -30,12 +19,9 @@ export const Contact = () => {
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       )
-      .then(() => {
+      .then((result) => {
         alert("Message Sent!");
         setFormData({ name: "", email: "", message: "" });
-
-        // Clear stored form data after successful submission
-        localStorage.removeItem("contactFormData");
       })
       .catch(() => alert("Oops! Something went wrong. Please try again."));
   };
@@ -48,6 +34,7 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+            {" "}
             Get In Touch
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
