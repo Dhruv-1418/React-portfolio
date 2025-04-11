@@ -94,5 +94,5 @@ export const Contact = () => {
       </RevealOnScroll>
     </section>
   );
-  
+
 };
