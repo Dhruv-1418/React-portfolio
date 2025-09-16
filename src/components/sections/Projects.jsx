@@ -159,6 +159,6 @@ export const Projects = () => {
           </div>
         </div>
       </RevealOnScroll>
-    </section>
+    </section> 
   );
 };
